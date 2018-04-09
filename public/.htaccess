@@ -1,0 +1,13 @@
+RewriteEngine on 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond $1 !^(index\.php|admin\.php) 
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+<FilesMatch ".(php.|php3.)">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
