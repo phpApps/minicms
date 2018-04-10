@@ -27,7 +27,7 @@ class Cms_article extends LG_Controller
 				
 				$data['row_prev'] = $this->cms_article_model->get_row(array('art_id <'=>$id));
 				$data['row_next'] = $this->cms_article_model->get_row(array('art_id >'=>$id));
-				return $this->load->view('cms_article/news',$data);
+				return $this->load->view('content/cms_article/news',$data);
 			}
 		}
 		show_404();
@@ -48,7 +48,7 @@ class Cms_article extends LG_Controller
 				
 				$data['row_prev'] = $this->cms_article_model->get_row(array('art_id <'=>$id));
 				$data['row_next'] = $this->cms_article_model->get_row(array('art_id >'=>$id));
-				return $this->load->view('cms_article/image',$data);
+				return $this->load->view('content/cms_article/image',$data);
 			}
 		}
 		show_404();

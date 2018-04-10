@@ -53,14 +53,12 @@ abstract class SYS_Controller extends LG_Controller
 		$this->session->set_userdata('admin_id',1);
 		$this->session->set_userdata('admin_roleid',1);
 		
-		$class = $this->router->class;
-		$method = $this->router->method;
 		$admin_id = $this->session->userdata('admin_id');
 		if($admin_id<1){
 			return redirect('login');	//登录验证
 		}
 		if($this->sys_admin_model->check_option()==FALSE){	//权限验证
-//	return redirect('version?limit');
+			return redirect('version?limit');
 		}
 		return;
 	}

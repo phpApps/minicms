@@ -4,7 +4,7 @@
 // 菜单列表
 
 
-class Cms_menu extends CMS_Controller 
+class Cms_menu extends SYS_Controller 
 {
 	
 	public function __construct()
@@ -22,7 +22,7 @@ class Cms_menu extends CMS_Controller
 	public function index()
 	{
 		$data['result'] = $this->cms_menu_model->get_menus();
-		return $this->load->view('cms_menu/list',$data);	
+		return $this->load->view('content/cms_menu/list',$data);	
 	}
 	
 	
@@ -30,13 +30,13 @@ class Cms_menu extends CMS_Controller
 	public function add()
 	{
 		if($this->check_data()==FALSE){
-			return $this->load->view('cms_menu/add');
+			return $this->load->view('content/cms_menu/add');
 		}
 		
 		$this->cms_menu_model->insert($this->input_data());
 		$this->cms_cache_model->update_menu_cache();
 		$this->cms_cache_model->update_route_cache();
-		return redirect(site_url('cms_menu/index'));
+		return redirect(site_url('content/cms_menu/index'));
 	}
 
 
@@ -44,17 +44,17 @@ class Cms_menu extends CMS_Controller
 	{
 		$row = $this->cms_menu_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url('cms_menu/index'));
+			return redirect(site_url('content/cms_menu/index'));
 		}
 		if($this->check_data()==FALSE){
 			$data['row'] = $row;
-			return $this->load->view('cms_menu/edit',$data);
+			return $this->load->view('content/cms_menu/edit',$data);
 		}
 		
 		$this->cms_menu_model->update($this->input_data(),$id);
 		$this->cms_cache_model->update_menu_cache();
 		$this->cms_cache_model->update_route_cache();
-		return redirect(site_url('cms_menu/index'));	
+		return redirect(site_url('content/cms_menu/index'));	
 	}
 	
 	
@@ -63,7 +63,7 @@ class Cms_menu extends CMS_Controller
 		$this->cms_menu_model->delete($id);
 		$this->cms_cache_model->update_menu_cache();
 		$this->cms_cache_model->update_route_cache();
-		return redirect(site_url('cms_menu/index'));		
+		return redirect(site_url('content/cms_menu/index'));		
 	}
 	
 	

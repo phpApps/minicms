@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("cms_label/add/{$label_bs}")?>'">添加</button>
+  <button type="button" onclick="location.href='<?php echo site_url("content/cms_label/add/{$label_bs}")?>'">添加</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -30,7 +30,7 @@
       <td><?php if($item['label_enable']==1):?>
         <input type="checkbox" disabled checked />
         <?php endif;?></td>
-      <td><a href="<?php echo site_url("cms_label/edit/{$label_bs}/".$item['label_id']);?>"> 修改 </a> <a href="<?php echo site_url("cms_label/delete/{$label_bs}/".$item['label_id']);?>"> 删除 </a></td>
+      <td><a href="<?php echo site_url("content/cms_label/edit/{$label_bs}/".$item['label_id']);?>"> 修改 </a> <a href="<?php echo site_url("content/cms_label/delete/{$label_bs}/".$item['label_id']);?>"> 删除 </a></td>
     </tr>
     <?php endforeach;?>
   </tbody>

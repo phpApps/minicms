@@ -4,7 +4,7 @@
 // 文章评论
 
 
-class Cms_comment extends CMS_Controller
+class Cms_comment extends SYS_Controller
 {
 	
 	public function __construct()
@@ -20,9 +20,9 @@ class Cms_comment extends CMS_Controller
 	{
 		$data['page'] = $page;
 		$total = $this->cms_comment_model->get_total();
-		$data['pages'] = $this->pagination->create_pages(site_url('cms_comment/index'),$total,20);
+		$data['pages'] = $this->pagination->create_pages(site_url('content/cms_comment/index'),$total,20);
 		$data['result'] = $this->cms_comment_model->get_list_patch(NULL,$page,20);
-		return $this->load->view('cms_comment/list',$data);
+		return $this->load->view('content/cms_comment/list',$data);
 	}
 	
 
@@ -30,31 +30,31 @@ class Cms_comment extends CMS_Controller
 	{
 		$row = $this->cms_comment_model->get_row_patch($id);
 		if(empty($row)){
-			return redirect(site_url('cms_comment/index'));
+			return redirect(site_url('content/cms_comment/index'));
 		}
 		$post['cmt_status']  = $this->input->post('cmt_status',TRUE);
 		$post['cmt_reply']  = $this->input->post('cmt_reply',TRUE);
 		if(empty($post['cmt_status'])){
 			$data['row'] = $row;
 			$data['page'] = $page;
-			return $this->load->view('cms_comment/edit',$data);
+			return $this->load->view('content/cms_comment/edit',$data);
 		}
 		$this->cms_comment_model->update($post,$id);
-		return redirect(site_url("cms_comment/index/{$page}"));
+		return redirect(site_url("content/cms_comment/index/{$page}"));
 	}
 	
 
 	public function reply($page=1,$id=1)
 	{	
 		$this->cms_comment_model->update(array("cmt_status"=>2),$id);
-		return redirect(site_url("cms_comment/index/{$page}"));
+		return redirect(site_url("content/cms_comment/index/{$page}"));
 	}
 
 
     public function delete($page=1,$id=1)
 	{	
 		$this->cms_comment_model->delete($id);
-		return redirect(site_url("cms_comment/index/{$page}"));
+		return redirect(site_url("content/cms_comment/index/{$page}"));
 	}
 	
 }

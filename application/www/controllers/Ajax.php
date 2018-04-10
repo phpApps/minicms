@@ -35,9 +35,9 @@ class Ajax extends LG_Controller
 		
 		if($this->check_member_data()==FALSE){
 			if($type){
-				return $this->load->view('cms_login/register',$data);
+				return $this->load->view('content/cms_login/register',$data);
 		    }
-			return $this->load->view('cms_login/login',$data);
+			return $this->load->view('content/cms_login/login',$data);
 		}
 	}
 	

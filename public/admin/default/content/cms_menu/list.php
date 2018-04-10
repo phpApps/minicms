@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url('cms_menu/add')?>'">添加</button>
+  <button type="button" onclick="location.href='<?php echo site_url('content/cms_menu/add')?>'">添加</button>
 </div>
 <table width="100%" cellspacing="0" cellpadding="0" class="dataBox">
   <thead>
@@ -35,7 +35,7 @@ function create_table($result,$level=0){
 <tr>
   <td><?php echo $item['menu_id']?></td>
   <td class="lv<?php echo $lv;?>"><?php echo$item['menu_name']?></td>
-  <td><a target="_blank" href="<?php echo $item['menu_link'];?>"><?php echo $item['menu_url']?></a></td>
+  <td><a target="_blank" href="<?php echo $item['menu_url'];?>"><?php echo $item['menu_url']?></a></td>
   <td><?php if($item['menu_out']==1) echo '外链';
   			elseif(strpos($item['menu_tid'],'page')!==FALSE) echo '单页面';
   			elseif(strpos($item['menu_tid'],'list_news')!==FALSE) echo '纯文本列表';
@@ -46,7 +46,7 @@ function create_table($result,$level=0){
     <input type="checkbox" disabled checked />
     <?php endif;?></td>
   <td><input type="text" value="<?php echo $item['menu_sort']?>" size="5" /></td>
-  <td><a href="<?php echo site_url("cms_menu/edit/{$item['menu_id']}");?>">修改</a> <a href="<?php echo site_url("cms_menu/delete/{$item['menu_id']}");?>" rel="del">删除</a></td>
+  <td><a href="<?php echo site_url("content/cms_menu/edit/{$item['menu_id']}");?>">修改</a> <a href="<?php echo site_url("content/cms_menu/delete/{$item['menu_id']}");?>" rel="del">删除</a></td>
 </tr>
 <?php 
 		if(isset($item['children'])){

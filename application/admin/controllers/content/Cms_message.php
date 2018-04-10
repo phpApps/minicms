@@ -4,7 +4,7 @@
 // 留言列表
 
 
-class Cms_message extends CMS_Controller
+class Cms_message extends SYS_Controller
 {
 	
 	public function __construct()
@@ -18,9 +18,9 @@ class Cms_message extends CMS_Controller
 	public function index($page=1)
 	{
 		$data['page'] = $page;
-		$data['pages'] = $this->pagination->create_pages(site_url('cms_message/index'),$this->cms_message_model->get_total(),20);
+		$data['pages'] = $this->pagination->create_pages(site_url('content/cms_message/index'),$this->cms_message_model->get_total(),20);
 		$data['result'] = $this->cms_message_model->get_list(NULL,$page,20);
-		return $this->load->view('cms_message/list',$data);
+		return $this->load->view('content/cms_message/list',$data);
 	}
 
 
@@ -28,22 +28,22 @@ class Cms_message extends CMS_Controller
 	{
 		$row = $this->cms_message_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url('cms_message/index'));
+			return redirect(site_url('content/cms_message/index'));
 		}
 		if($this->check_data() == FALSE){
 			$data['row'] = $row;
 			$data['page'] = $page;
-			return $this->load->view('cms_message/edit',$data);
+			return $this->load->view('content/cms_message/edit',$data);
 		}
 		$this->cms_message_model->update($this->input_data(),$id);
-		return redirect(site_url("cms_message/index/{$page}"));
+		return redirect(site_url("content/cms_message/index/{$page}"));
 	}
 	
 	
 	public function delete($page=1,$id=1)
 	{	
 		$this->cms_message_model->delete($id);
-		return redirect(site_url("cms_message/index/{$page}"));
+		return redirect(site_url("content/cms_message/index/{$page}"));
 	}
 	
 	

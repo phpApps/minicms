@@ -4,7 +4,7 @@
 // 文章列表
 
 
-class Cms_article extends CMS_Controller 
+class Cms_article extends SYS_Controller 
 {
 	
 	
@@ -66,14 +66,14 @@ class Cms_article extends CMS_Controller
 		// 分页数据
 		$data['sign'] = $sign;
 		$data['page'] = $page;
-		$data['pages'] = $this->pagination->create_pages(site_url('cms_article/index/'.$sign),$this->cms_aticle_model->get_total(),$limit);
+		$data['pages'] = $this->pagination->create_pages(site_url('content/cms_article/index/'.$sign),$this->cms_aticle_model->get_total(),$limit);
 		
 		$result = $this->cms_aticle_model->get_list(NULL,$page,$limit); $this->db->flush_cache();
 		$this->cms_aticle_model->replenish_data($result);
 		$data['result'] = $result;
 		
 		$data['list_block'] = $this->cms_block_model->get_artBlock();	 
-		return $this->load->view('cms_article/list',$data);
+		return $this->load->view('content/cms_article/list',$data);
 	}
 
 
@@ -84,10 +84,10 @@ class Cms_article extends CMS_Controller
 		if($this->check_input()==FALSE){
 			$data['sign'] = $sign;
 			$data['list_block'] = $this->cms_block_model->get_artBlock();
-			return $this->load->view('cms_article/add',$data);
+			return $this->load->view('content/cms_article/add',$data);
 		}
         $this->cms_aticle_model->insert($this->input_data());
-        return redirect(site_url("cms_article/index/{$sign}"));	
+        return redirect(site_url("content/cms_article/index/{$sign}"));	
 	}
 	
 	
@@ -96,7 +96,7 @@ class Cms_article extends CMS_Controller
 	{
 		$row = $this->cms_aticle_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url("cms_article/index/{$sign}"));
+			return redirect(site_url("content/cms_article/index/{$sign}"));
 		}
 		
         if($this->check_input()==FALSE){
@@ -104,11 +104,11 @@ class Cms_article extends CMS_Controller
 			$data['sign'] = $sign;
 			$data['page'] = $page;
 			$data['list_block'] = $this->cms_block_model->get_artBlock();
-			return $this->load->view('cms_article/edit',$data);	
+			return $this->load->view('content/cms_article/edit',$data);	
         }
 
         $this->cms_aticle_model->update($this->input_data(),$id);
-        return redirect(site_url("cms_article/index/{$sign}/{$page}"));
+        return redirect(site_url("content/cms_article/index/{$sign}/{$page}"));
 	}
 
 
@@ -117,7 +117,7 @@ class Cms_article extends CMS_Controller
 	{
 		$this->cms_aticle_model->delete($id);
         $this->ma_poslabel_model->delete(array('art_id' => $id));
-		return redirect(site_url('cms_article/index/'.$cid.'/'.$page));
+		return redirect(site_url('content/cms_article/index/'.$cid.'/'.$page));
 	}
 	
 	

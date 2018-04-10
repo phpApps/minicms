@@ -4,7 +4,7 @@
 // 站点设置
 
 
-class Cms_setting extends CMS_Controller 
+class Cms_setting extends SYS_Controller 
 {
 	
 	public function __construct()
@@ -21,7 +21,7 @@ class Cms_setting extends CMS_Controller
 	public function index()
 	{
 		$data['result'] = $this->cms_setting_model->get_list();
-		return $this->load->view('cms_setting/list',$data);
+		return $this->load->view('content/cms_setting/list',$data);
 	}
 	
 	
@@ -29,11 +29,11 @@ class Cms_setting extends CMS_Controller
 	{
 		if($this->check_data() == FALSE){
 			$data['list_lang'] = config_item('exist_language');
-			return $this->load->view('cms_setting/add',$data);
+			return $this->load->view('content/cms_setting/add',$data);
 		}
 		$this->cms_setting_model->insert($this->input_data());
 		$this->cms_cache_model->update_setting_cache();
-		return redirect(site_url("cms_setting/index"));
+		return redirect(site_url("content/cms_setting/index"));
 	}
 	
 	
@@ -41,16 +41,16 @@ class Cms_setting extends CMS_Controller
 	{
 		$row = $this->cms_setting_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url("cms_setting/index"));
+			return redirect(site_url("content/cms_setting/index"));
 		}
 		if($this->check_data($id)==FALSE){
 			$data['row'] = $row;
 			$data['list_lang'] = config_item('exist_language');
-			return $this->load->view('cms_setting/edit',$data);
+			return $this->load->view('content/cms_setting/edit',$data);
 		}
 		$this->cms_setting_model->update($this->input_data($id),$id);
 		$this->cms_cache_model->update_setting_cache();
-		return redirect(site_url("cms_setting/index"));	
+		return redirect(site_url("content/cms_setting/index"));	
 	}
 	
 	
@@ -58,7 +58,7 @@ class Cms_setting extends CMS_Controller
 	{
 		$this->cms_setting_model->delete(array('set_id'=>$id,'set_system'=>0));
 		$this->cms_cache_model->update_setting_cache();
-		return redirect(site_url("cms_setting/index"));	
+		return redirect(site_url("content/cms_setting/index"));	
 	}
 	
 	

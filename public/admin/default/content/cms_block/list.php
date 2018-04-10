@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url('cms_block/add')?>'">添加</button>
+  <button type="button" onclick="location.href='<?php echo site_url('content/cms_block/add')?>'">添加</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -36,9 +36,9 @@
       <td><?php if($item['block_enable']==1):?>
         <input type="checkbox" disabled checked />
         <?php endif;?></td>
-      <td><a href="<?php echo site_url("cms_block/edit/".$item['block_id']);?>">修改</a>
+      <td><a href="<?php echo site_url("content/cms_block/edit/".$item['block_id']);?>">修改</a>
         <?php if($item['block_system']==0):?>
-        <a href="<?php echo site_url("cms_block/delete/".$item['block_id']);?>" rel="del">删除</a></td>
+        <a href="<?php echo site_url("content/cms_block/delete/".$item['block_id']);?>" rel="del">删除</a></td>
       <?php endif;?>
     </tr>
     <?php endforeach;?>

@@ -11,7 +11,7 @@ class Cms_message_model  extends  MY_Model
 	{
 		
 		parent::__construct();
-        $this->table = 'cms_message';
+        $this->table = 'content/cms_message';
 		$this->autoid = 'msg_id';
 		$this->sort  = 'desc';
 	}

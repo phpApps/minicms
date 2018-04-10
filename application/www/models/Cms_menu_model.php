@@ -11,7 +11,7 @@ class Cms_menu_model  extends  CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table  = 'cms_menu';
+		$this->table  = 'content/cms_menu';
 		$this->autoid = 'menu_id';
 		$this->menus = lang_config_item('menus');
 	}
@@ -123,7 +123,7 @@ class Cms_menu_model  extends  CI_Model
 		$this->db->where($this->autoid,$id);
 		$row = $this->db->get($this->table)->row_array();
 		if($row){
-			if(empty($row['menu_link'])) $row['menu_link'] = front_menu_url($row);
+			if(empty($row['menu_url'])) $row['menu_url'] = front_menu_url($row);
 			if(empty($row['menu_content'])) $row['menu_content'] =  front_parse_html($row['menu_content']);
 			if(empty($row['menu_sname'])) $row['menu_sname'] = $row['menu_name'];
 			if(empty($row['menu_intro'])) $row['menu_intro'] = ellipsize($row['menu_description'],200);

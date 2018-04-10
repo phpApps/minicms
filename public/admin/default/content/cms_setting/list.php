@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url('cms_setting/add')?>'">添加</button>
+  <button type="button" onclick="location.href='<?php echo site_url('content/cms_setting/add')?>'">添加</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -36,9 +36,9 @@
 				if(isset($value[$lang])) echo ellipsize(strip_tags($value[$lang]),20);
 				else echo ellipsize(strip_tags($item['set_value']),20);
 		?></td>
-      <td><a href="<?php echo site_url('cms_setting/edit/'.$item['set_id']);?>">修改</a>
+      <td><a href="<?php echo site_url('content/cms_setting/edit/'.$item['set_id']);?>">修改</a>
         <?php if($item['set_system']==0):?>
-        <a href="<?php echo site_url('cms_setting/delete/'.$item['set_id']);?>" rel="del">删除</a>
+        <a href="<?php echo site_url('content/cms_setting/delete/'.$item['set_id']);?>" rel="del">删除</a>
         <?php endif;?></td>
     </tr>
     <?php endforeach;?>

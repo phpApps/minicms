@@ -4,7 +4,7 @@
 // 模块列表
 
 
-class Cms_block extends CMS_Controller 
+class Cms_block extends SYS_Controller 
 {
 	
 	public function __construct()
@@ -20,7 +20,7 @@ class Cms_block extends CMS_Controller
 	public function index()
 	{
 		$data['result'] = $this->cms_block_model->get_list(array('asc'=>'block_sort'));
-		$this->load->view('cms_block/list',$data);	
+		$this->load->view('content/cms_block/list',$data);	
 	}
 	
 	
@@ -30,10 +30,10 @@ class Cms_block extends CMS_Controller
 	public function add()
 	{
 		if($this->check_data()==FALSE){
-			return $this->load->view('cms_block/add');
+			return $this->load->view('content/cms_block/add');
 		}
 		$this->cms_block_model->insert($this->input_data());
-		return redirect(site_url('cms_block/index'));
+		return redirect(site_url('content/cms_block/index'));
 	}
 	
 	
@@ -44,14 +44,14 @@ class Cms_block extends CMS_Controller
 	{
 		$row = $this->cms_block_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url('cms_block/index'));
+			return redirect(site_url('content/cms_block/index'));
 		}
 		if($this->check_data()==FALSE){
 			$data['row'] = $row;
-			return $this->load->view('cms_block/edit',$data);
+			return $this->load->view('content/cms_block/edit',$data);
 		}
 		$this->cms_block_model->update($this->input_data(),$id);
-		return redirect(site_url('cms_block/index'));	
+		return redirect(site_url('content/cms_block/index'));	
 	}
 	
 	
@@ -61,7 +61,7 @@ class Cms_block extends CMS_Controller
 	public function delete($id=0)
 	{	
 		$this->cms_block_model->delete($id);
-		return redirect(site_url('cms_block/index'));		
+		return redirect(site_url('content/cms_block/index'));		
 	}
 	
 	

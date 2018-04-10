@@ -25,7 +25,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("cms_comment")?>'">刷新</button>
+  <button type="button" onclick="location.href='<?php echo site_url("content/cms_comment")?>'">刷新</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -53,9 +53,9 @@
       <td><?php if($item['cmt_status']== 2):?>
         <span class="green">已审核</span>
         <?php else:?>
-        <span class="red">未审核</span> <a id="btn" href="<?php echo site_url("cms_comment/reply/{$page}/{$item['cmt_id']}")?>">审核</a>
+        <span class="red">未审核</span> <a id="btn" href="<?php echo site_url("content/cms_comment/reply/{$page}/{$item['cmt_id']}")?>">审核</a>
         <?php endif;?></td>
-      <td><a href="<?php echo site_url("cms_comment/edit/{$page}/{$item['cmt_id']}")?>">修改</a> <a href="<?php echo site_url("cms_comment/delete/{$page}/{$item['cmt_id']}")?>" rel="del">删除</a></td>
+      <td><a href="<?php echo site_url("content/cms_comment/edit/{$page}/{$item['cmt_id']}")?>">修改</a> <a href="<?php echo site_url("content/cms_comment/delete/{$page}/{$item['cmt_id']}")?>" rel="del">删除</a></td>
     </tr>
     <?php endforeach ?>
   </tbody>

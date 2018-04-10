@@ -73,7 +73,7 @@ KindEditor.ready(function(K) {
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("cms_label/index/$label_bs");?>'">返回</button>
+  <button type="button" onclick="location.href='<?php echo site_url("content/cms_label/index/$label_bs");?>'">返回</button>
 </div>
 <div class="noteBox"></div>
 <form method="post">

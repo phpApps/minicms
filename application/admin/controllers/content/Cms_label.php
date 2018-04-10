@@ -4,7 +4,7 @@
 // 标签列表
 
 
-class Cms_label extends CMS_Controller 
+class Cms_label extends SYS_Controller 
 {
 	
 	public function __construct()
@@ -21,7 +21,7 @@ class Cms_label extends CMS_Controller
 	{
 		$data['label_bs'] = $label_bs;
 		$data['result'] = $this->cms_label_model->get_list(array('label_bs'=>$label_bs));
-		$this->load->view('cms_label/list',$data);	
+		$this->load->view('content/cms_label/list',$data);	
 	}
 	
 	
@@ -30,10 +30,10 @@ class Cms_label extends CMS_Controller
 	{
 		if($this->check_data()==FALSE){
 			$data['label_bs'] = $label_bs;
-			return $this->load->view('cms_label/add',$data);
+			return $this->load->view('content/cms_label/add',$data);
 		}
 		$this->cms_label_model->insert($this->input_data($label_bs));
-		return redirect(site_url('cms_label/index/'.$label_bs));
+		return redirect(site_url('content/cms_label/index/'.$label_bs));
 	}
 
 
@@ -42,15 +42,15 @@ class Cms_label extends CMS_Controller
 	{
 		$row = $this->cms_label_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url('cms_label/index/'.$label_bs));
+			return redirect(site_url('content/cms_label/index/'.$label_bs));
 		}
 		if($this->check_data()==FALSE){
 			$data['row'] = $row;
 			$data['label_bs'] = $label_bs;
-			return $this->load->view('cms_label/edit',$data);
+			return $this->load->view('content/cms_label/edit',$data);
 		}
 		$this->cms_label_model->update($this->input_data($label_bs),$id);
-		return redirect(site_url('cms_label/index/'.$label_bs));	
+		return redirect(site_url('content/cms_label/index/'.$label_bs));	
 	}
 	
 	
@@ -58,7 +58,7 @@ class Cms_label extends CMS_Controller
 	public function delete($label_bs=NULL,$id=0)
 	{	
 		$this->cms_label_model->delete($id);
-		return redirect(site_url('cms_label/index/'.$label_bs));		
+		return redirect(site_url('content/cms_label/index/'.$label_bs));		
 	}
 	
 	

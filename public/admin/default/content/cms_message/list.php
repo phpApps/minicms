@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("cms_message")?>'">刷新</button>
+  <button type="button" onclick="location.href='<?php echo site_url("content/cms_message")?>'">刷新</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -32,8 +32,8 @@
       <td><?php echo ellipsize($item['msg_content'],30);?></td>
       <td><?php echo ellipsize($item['msg_remark'],30);?></td>
       <td><?php echo date('Y-m-d H:i',strtotime($item['msg_time']));?></td>
-      <td><a href="<?php echo site_url("cms_message/edit/{$page}/{$item['msg_id']}")?>">修改</a>
-      <a href="<?php echo site_url("cms_message/delete/{$page}/{$item['msg_id']}")?>" rel="del">删除</a></td>
+      <td><a href="<?php echo site_url("content/cms_message/edit/{$page}/{$item['msg_id']}")?>">修改</a>
+      <a href="<?php echo site_url("content/cms_message/delete/{$page}/{$item['msg_id']}")?>" rel="del">删除</a></td>
     </tr>
     <?php endforeach ?>
   </tbody>

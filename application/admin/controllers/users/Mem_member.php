@@ -4,7 +4,7 @@
 // 用户注册
 
 
-class Mem_member extends CMS_Controller
+class Mem_member extends SYS_Controller
 {
 	
 	public function __construct()

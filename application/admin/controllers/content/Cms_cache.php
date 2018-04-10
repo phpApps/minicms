@@ -4,7 +4,7 @@
 // 更新缓存
 
 
-class Cms_cache extends CMS_Controller 
+class Cms_cache extends SYS_Controller 
 {
 	
 	public function __construct()
@@ -23,9 +23,9 @@ class Cms_cache extends CMS_Controller
 			foreach($model as $method){
 				$this->cms_cache_model->$method();
 			}
-			return $this->load->view('cms_cache/index',array('msg'=>'缓存数据更新成功！'));
+			return $this->load->view('content/cms_cache/index',array('msg'=>'缓存数据更新成功！'));
 		}
-		return $this->load->view('cms_cache/index');
+		return $this->load->view('content/cms_cache/index');
 	}
 	
 	

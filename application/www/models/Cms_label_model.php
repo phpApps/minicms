@@ -11,7 +11,7 @@ class Cms_label_model  extends  CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table  = 'cms_label';
+		$this->table  = 'content/cms_label';
 		$this->autoid = 'label_id';
 		$this->language = $this->session->userdata('site_language');
 	}

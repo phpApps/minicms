@@ -7,7 +7,7 @@ $config['menus']=array (
     'menu_name' => '关于华夏',
     'menu_enable' => '1',
     'lang' => 'cn',
-    'menu_link' => 'http://www.oscms.me/about/intro/',
+    'menu_url' => 'http://www.oscms.me/about/intro/',
     'children' => 
     array (
       0 => 
@@ -17,7 +17,7 @@ $config['menus']=array (
         'menu_name' => '公司简介',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/about/intro/',
+        'menu_url' => 'http://www.oscms.me/about/intro/',
         'children' => 
         array (
         ),
@@ -29,7 +29,7 @@ $config['menus']=array (
         'menu_name' => '资质荣誉',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/about/zizhi/',
+        'menu_url' => 'http://www.oscms.me/about/zizhi/',
         'children' => 
         array (
         ),
@@ -41,7 +41,7 @@ $config['menus']=array (
         'menu_name' => '组织机构',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/about/zuzhi/',
+        'menu_url' => 'http://www.oscms.me/about/zuzhi/',
         'children' => 
         array (
         ),
@@ -53,7 +53,7 @@ $config['menus']=array (
         'menu_name' => '成员单位',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/account/danwei/',
+        'menu_url' => 'http://www.oscms.me/account/danwei/',
         'children' => 
         array (
         ),
@@ -65,7 +65,7 @@ $config['menus']=array (
         'menu_name' => '联系方式',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/about/contact/',
+        'menu_url' => 'http://www.oscms.me/about/contact/',
         'children' => 
         array (
         ),
@@ -79,7 +79,7 @@ $config['menus']=array (
     'menu_name' => '经营发展',
     'menu_enable' => '1',
     'lang' => 'cn',
-    'menu_link' => 'http://www.oscms.me/develop/zichan/',
+    'menu_url' => 'http://www.oscms.me/develop/zichan/',
     'children' => 
     array (
       0 => 
@@ -89,7 +89,7 @@ $config['menus']=array (
         'menu_name' => '资产分布',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/develop/zichan/',
+        'menu_url' => 'http://www.oscms.me/develop/zichan/',
         'children' => 
         array (
         ),
@@ -101,7 +101,7 @@ $config['menus']=array (
         'menu_name' => '经营范围',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/develop/fanwei/',
+        'menu_url' => 'http://www.oscms.me/develop/fanwei/',
         'children' => 
         array (
         ),
@@ -113,7 +113,7 @@ $config['menus']=array (
         'menu_name' => '生产经营',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/develop/shengchan/',
+        'menu_url' => 'http://www.oscms.me/develop/shengchan/',
         'children' => 
         array (
         ),
@@ -125,7 +125,7 @@ $config['menus']=array (
         'menu_name' => '财务报告',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/develop/caiwu/',
+        'menu_url' => 'http://www.oscms.me/develop/caiwu/',
         'children' => 
         array (
         ),
@@ -139,7 +139,7 @@ $config['menus']=array (
     'menu_name' => '新闻中心',
     'menu_enable' => '1',
     'lang' => 'cn',
-    'menu_link' => 'http://www.oscms.me/news/tebie/',
+    'menu_url' => 'http://www.oscms.me/news/tebie/',
     'children' => 
     array (
       0 => 
@@ -149,7 +149,7 @@ $config['menus']=array (
         'menu_name' => '特别关注',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/news/tebie/',
+        'menu_url' => 'http://www.oscms.me/news/tebie/',
         'children' => 
         array (
         ),
@@ -161,7 +161,7 @@ $config['menus']=array (
         'menu_name' => '集团要闻',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/news/yaowen/',
+        'menu_url' => 'http://www.oscms.me/news/yaowen/',
         'children' => 
         array (
         ),
@@ -173,7 +173,7 @@ $config['menus']=array (
         'menu_name' => '综合新闻',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/news/zonghe/',
+        'menu_url' => 'http://www.oscms.me/news/zonghe/',
         'children' => 
         array (
         ),
@@ -185,7 +185,7 @@ $config['menus']=array (
         'menu_name' => '深度报道',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/news/shendu/',
+        'menu_url' => 'http://www.oscms.me/news/shendu/',
         'children' => 
         array (
         ),
@@ -199,7 +199,7 @@ $config['menus']=array (
     'menu_name' => '社会责任',
     'menu_enable' => '1',
     'lang' => 'cn',
-    'menu_link' => 'http://www.oscms.me/duty/gongyi/',
+    'menu_url' => 'http://www.oscms.me/duty/gongyi/',
     'children' => 
     array (
       0 => 
@@ -209,7 +209,7 @@ $config['menus']=array (
         'menu_name' => '社会公益',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/duty/gongyi/',
+        'menu_url' => 'http://www.oscms.me/duty/gongyi/',
         'children' => 
         array (
         ),
@@ -221,7 +221,7 @@ $config['menus']=array (
         'menu_name' => '责任行动',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/duty/xingdong/',
+        'menu_url' => 'http://www.oscms.me/duty/xingdong/',
         'children' => 
         array (
         ),
@@ -233,7 +233,7 @@ $config['menus']=array (
         'menu_name' => '责任报告',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/duty/baogao/',
+        'menu_url' => 'http://www.oscms.me/duty/baogao/',
         'children' => 
         array (
         ),
@@ -247,7 +247,7 @@ $config['menus']=array (
     'menu_name' => '企业文化',
     'menu_enable' => '1',
     'lang' => 'cn',
-    'menu_link' => 'http://www.oscms.me/culture/jingshen/',
+    'menu_url' => 'http://www.oscms.me/culture/jingshen/',
     'children' => 
     array (
       0 => 
@@ -257,7 +257,7 @@ $config['menus']=array (
         'menu_name' => '文化论坛',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/culture/luntan/',
+        'menu_url' => 'http://www.oscms.me/culture/luntan/',
         'children' => 
         array (
         ),
@@ -269,7 +269,7 @@ $config['menus']=array (
         'menu_name' => '华夏精神',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/culture/jingshen/',
+        'menu_url' => 'http://www.oscms.me/culture/jingshen/',
         'children' => 
         array (
         ),
@@ -281,7 +281,7 @@ $config['menus']=array (
         'menu_name' => '文化动态',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/culture/dongtai/',
+        'menu_url' => 'http://www.oscms.me/culture/dongtai/',
         'children' => 
         array (
         ),
@@ -293,7 +293,7 @@ $config['menus']=array (
         'menu_name' => '华夏故事',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/culture/gushi/',
+        'menu_url' => 'http://www.oscms.me/culture/gushi/',
         'children' => 
         array (
         ),
@@ -305,7 +305,7 @@ $config['menus']=array (
         'menu_name' => '轻松驿站',
         'menu_enable' => '1',
         'lang' => 'cn',
-        'menu_link' => 'http://www.oscms.me/culture/yizhan/',
+        'menu_url' => 'http://www.oscms.me/culture/yizhan/',
         'children' => 
         array (
         ),

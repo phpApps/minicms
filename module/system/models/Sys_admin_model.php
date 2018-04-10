@@ -57,7 +57,7 @@ class Sys_admin_model  extends  MY_Model
 	
 	
 	//验证权限项
-	public function check_option($url=NULL,$folder=NULL)
+	public function check_option($url=NULL)
 	{
 		$admin_id = $this->session->userdata('admin_id');
 		if($admin_id == 1) return TRUE;

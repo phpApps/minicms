@@ -10,7 +10,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("cms_article/add/{$sign}")?>'">添加</button>
+  <button type="button" onclick="location.href='<?php echo site_url("content/cms_article/add/{$sign}")?>'">添加</button>
 </div>
 <form method="post" class="findBox">
   <table cellspacing="0" cellpadding="0">
@@ -65,7 +65,7 @@
       <td><?php if($item['art_hastop']==1):?>
         <input type="checkbox" disabled checked />
         <?php endif;?></td>
-      <td><a href="<?php echo site_url('cms_article/edit/'.$sign.'/'.$page.'/'.$item['art_id'])?>">修改</a></td>
+      <td><a href="<?php echo site_url('content/cms_article/edit/'.$sign.'/'.$page.'/'.$item['art_id'])?>">修改</a></td>
     </tr>
     <?php endforeach ?>
   </tbody>
