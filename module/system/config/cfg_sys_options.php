@@ -224,18 +224,18 @@ $config['options']=array (
   27 => 
   array (
     'option_id' => '27',
-    'option_name' => '会员中心',
-    'option_folder' => 'member',
-    'option_value' => 'member/welcome',
+    'option_name' => '用户中心',
+    'option_folder' => '',
+    'option_value' => 'users/welcome',
     'option_ismenu' => '1',
     'children' => 
     array (
       0 => 
       array (
         'option_id' => '28',
-        'option_name' => '会员管理',
+        'option_name' => '用户管理',
         'option_folder' => '',
-        'option_value' => 'member/mem_nav',
+        'option_value' => 'users/mem_nav',
         'option_ismenu' => '1',
         'children' => 
         array (
@@ -244,7 +244,7 @@ $config['options']=array (
             'option_id' => '29',
             'option_name' => '会员资料',
             'option_folder' => '',
-            'option_value' => 'member/mem_member',
+            'option_value' => 'users/mem_member',
             'option_ismenu' => '1',
           ),
         ),

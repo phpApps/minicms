@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("mem_member")?>'">刷新</button>
+  <button type="button" onclick="location.href='<?php echo site_url("users/mem_member")?>'">刷新</button>
 </div>
 <table width="100%" cellspacing="0" class="dataBox">
   <thead>
@@ -32,8 +32,8 @@
       <td><?php echo $item['member_email'];?></td>
       <td><?php echo date('Y-m-d H:i',strtotime($item['member_regtime']));?></td>
       <td><?php echo ellipsize($item['member_remark'],30);?></td>
-      <td><a href="<?php echo site_url("mem_member/edit/{$page}/{$item['member_id']}")?>">修改</a>
-      <a href="<?php echo site_url("mem_member/delete/{$page}/{$item['member_id']}")?>" rel="del">删除</a></td>
+      <td><a href="<?php echo site_url("users/mem_member/edit/{$page}/{$item['member_id']}")?>">修改</a>
+      <a href="<?php echo site_url("users/mem_member/delete/{$page}/{$item['member_id']}")?>" rel="del">删除</a></td>
     </tr>
     <?php endforeach ?>
   </tbody>

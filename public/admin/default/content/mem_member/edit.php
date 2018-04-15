@@ -9,7 +9,7 @@
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">
-  <button type="button" onclick="location.href='<?php echo site_url("mem_member/index/{$page}")?>'">返回</button>
+  <button type="button" onclick="location.href='<?php echo site_url("users/mem_member/index/{$page}")?>'">返回</button>
 </div>
 <div class="noteBox"></div>
 <form method="post">

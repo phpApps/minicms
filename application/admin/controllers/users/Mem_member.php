@@ -20,9 +20,9 @@ class Mem_member extends SYS_Controller
 	{
 		$data['page'] = $page;
 		$total = $this->mem_member_model->get_total();
-		$data['pages'] = $this->pagination->create_pages(site_url('mem_member/index'),$total,20);
+		$data['pages'] = $this->pagination->create_pages(site_url('users/mem_member/index'),$total,20);
 		$data['result'] = $this->mem_member_model->get_list(NULL,$page,20);
-		return $this->load->view('mem_member/list',$data);
+		return $this->load->view('users/mem_member/list',$data);
 	}
 
 
@@ -30,22 +30,22 @@ class Mem_member extends SYS_Controller
 	{
 		$row = $this->mem_member_model->get_row($id);
 		if(empty($row)){
-			return redirect(site_url('mem_member/index'));
+			return redirect(site_url('users/mem_member/index'));
 		}
 		if($this->check_data() == FALSE){
 			$data['row'] = $row;
 			$data['page'] = $page;
-			return $this->load->view('mem_member/edit',$data);
+			return $this->load->view('users/mem_member/edit',$data);
 		}
 		$this->mem_member_model->update($this->input_data(),$id);
-		return redirect(site_url("mem_member/index/{$page}"));
+		return redirect(site_url("users/mem_member/index/{$page}"));
 	}
 	
 	
 	public function delete($page=1,$id=1)
 	{	
 		$this->mem_member_model->delete($id);
-		return redirect(site_url("mem_member/index/{$page}"));
+		return redirect(site_url("users/mem_member/index/{$page}"));
 	}
 	
 	

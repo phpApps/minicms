@@ -43,7 +43,7 @@ $autoload['packages'] = array(
 	MODUPATH.'shared',
 	MODUPATH.'system',
 	MODUPATH.'content',
-	MODUPATH.'user',
+	MODUPATH.'users',
 	MODUPATH.'plugins'
 );
 
