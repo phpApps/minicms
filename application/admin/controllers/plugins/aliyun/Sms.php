@@ -6,7 +6,7 @@
 *
 **/
 
-class Caliyun extends SYS_Controller
+class Sms extends SYS_Controller
 {
 	public function __construct()
 	{
@@ -45,39 +45,21 @@ class Caliyun extends SYS_Controller
 		return $this->load->view('plugins/aliyun/sms',$data);
 	}
 	
-	//阿里云邮箱
-	public function alemail()
-	{
-		$post['accessKey'] = $this->input->post('accessKey',TRUE);
-		$post['accessSecret'] = $this->input->post('accessSecret',TRUE);
-		$post['signName'] = $this->input->post('signName',TRUE);
-		$post['accessSite'] = $this->input->post('accessSite',TRUE);
-		$post['area'] = $this->input->post('area',TRUE);
-		
-		$this->form_validation->set_rules('accessKey','密钥','trim|required|max_length[255]');
-		$this->form_validation->set_rules('accessSecret','校验码','trim|required|max_length[255]');
-		$this->form_validation->set_rules('signName','邮件签名','trim|required|max_length[64]');
-		$this->form_validation->set_rules('accessSite','发件地址','trim|required|max_length[64]');
-		$this->form_validation->set_rules('area','区域','trim|required|max_length[64]');
-		
-		$aliyun = config_item('aliyun');
-		$data['param'] = $aliyun['email'];
-		
-		if($this->form_validation->run()== FALSE){
-			$data['sign'] = NULL;
-			return $this->load->view('plugins/aliyun/email',$data);
+		public
+	function index() {
+		$type = $this->input->post( 'type', TRUE );
+		$send_name = $this->input->post( 'send_name', TRUE );
+		$sendRegTpl = $this->input->post( 'sendRegTpl', TRUE );
+
+		$this->load->library( 'aliyun_php_sdk_sms/aliyunsms', $param );
+		$res = $this->aliyunsms->send( $sendRegTpl, $send_name, array( 'password' => strval( random_string( 'numeric', 6 ) ) ) );
+		if ( empty( $res->RequestId ) ) {
+			return ( json_encode( array( 'error' => 1003, 'msg' => $res ) ) );
+		} else {
+			echo json_encode( array( 'error' => '1000', 'msg' => '未知错误！' ) );
 		}
-		
-		$aliyun['email'] = $post;
-		$this->save_config($aliyun);
-		
-		$data['sign'] = '配置创建成功';
-		return $this->load->view('plugins/aliyun/email',$data);
 	}
 	
 	
-	private function save_config($data=array())
-	{
-		write_file( MODUPATH.'plugins/config/cfg_plug_login.php', array_to_cache('aliyun', $data));		
-	}
+
 }

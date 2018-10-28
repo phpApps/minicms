@@ -10,7 +10,7 @@ class Binding extends MY_Controller
     	parent::__construct();
 		$this->load->model('sys_captcha_model');
 		$this->load->model('mem_member_model');
-		$this->load->model('tp_login_model');
+		$this->load->model('plug_login_model');
 	}
 	
 	
@@ -20,14 +20,14 @@ class Binding extends MY_Controller
 		$uid = $this->session->userdata('uid');
 		$login_from = $this->session->userdata('from');
 		$redirect_uri = $this->session->userdata('redirect_uri');
-		$tplogin = $this->tp_login_model->get_row(array("login_uid"=>$uid,"login_from"=>$login_from));
+		$tplogin = $this->plug_login_model->get_row(array("login_uid"=>$uid,"login_from"=>$login_from));
 		
 		if(!empty($tplogin["login_mid"])){
 			$this->session->set_userdata('mid',$tplogin["login_mid"]);
 			return redirect($redirect_uri);
 		}
 			
-		$row = $this->tp_login_model->get_row(array('login_uid'=>$uid,'login_from'=>$login_from));
+		$row = $this->plug_login_model->get_row(array('login_uid'=>$uid,'login_from'=>$login_from));
 		if($row){
 			$data['member_icon'] =  $row['login_icon'];
 			$data['member_name'] = $row['login_name'];
@@ -52,13 +52,13 @@ class Binding extends MY_Controller
 			die(json_encode(array('error'=>1001,'msg'=>'帐号不存在')));
 		}
 		
-		$res = $this->tp_login_model->get_total(array('login_mid'=>$result['member_id'],'login_from'=>$login_from));
+		$res = $this->plug_login_model->get_total(array('login_mid'=>$result['member_id'],'login_from'=>$login_from));
 		if($res > 0 ){
 			die(json_encode(array('error'=>1002,'msg'=>'该帐号已绑定')));
 		}
 		
 		//绑定帐号
-		$this->tp_login_model->update(array('login_mid'=>$result['member_id']),array('login_uid'=>$uid,'login_from'=>$login_from));
+		$this->plug_login_model->update(array('login_mid'=>$result['member_id']),array('login_uid'=>$uid,'login_from'=>$login_from));
 		$this->session->set_userdata('mid',$result['member_id']);
 		die(json_encode(array('error'=>1009,'msg'=>'帐号绑定成功')));
 	}
@@ -94,7 +94,7 @@ class Binding extends MY_Controller
 		
 		$uid = $this->session->userdata('uid');
 		$login_from = $this->session->userdata('from');
-		$this->tp_login_model->update(array('login_mid'=>$mid),array('login_uid'=>$uid,'login_from'=>$login_from));
+		$this->plug_login_model->update(array('login_mid'=>$mid),array('login_uid'=>$uid,'login_from'=>$login_from));
 		$this->session->set_userdata('mid',$mid);
 		die(json_encode(array('error'=>2009,'msg'=>'帐号绑定成功')));
 	}
@@ -103,9 +103,9 @@ class Binding extends MY_Controller
 	public function unbinding(){
 		$mid = $this->session->userdata('mid');
 		$login_from = $this->input->get('login_from',true);
-		$data['logintype'] = $this->tp_login_model->get_list(array('login_mid'=>$mid));
+		$data['logintype'] = $this->plug_login_model->get_list(array('login_mid'=>$mid));
 		if($mid && $login_from){
-			$this->tp_login_model->update(array('login_mid'=>''),array('login_from'=>$login_from));
+			$this->plug_login_model->update(array('login_mid'=>''),array('login_from'=>$login_from));
 			return redirect(site_url('login'));
 		}
 		return $this->load->view('unbinding',$data);

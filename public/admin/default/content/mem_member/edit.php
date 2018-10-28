@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="<?php echo base_url();?>template/default/assets/css/style.css" rel="stylesheet" />
-<script src="<?php echo base_url();?>template/default/plugin/jquery/jquery-1.11.1.min.js"></script>
-<script src="<?php echo base_url();?>template/default/assets/js/script.js"></script>
+<link href="<?php echo base_url();?>admin/assets/css/style.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>admin/default/plugin/jquery/jquery-1.11.1.min.js"></script>
+<script src="<?php echo base_url();?>admin/assets/js/script.js"></script>
 </head>
 <body style="padding-bottom:300px;">
 <div class="toolBox">

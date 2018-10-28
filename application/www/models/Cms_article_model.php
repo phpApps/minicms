@@ -11,7 +11,7 @@ class Cms_article_model  extends  MY_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->table  = 'content/cms_article';
+		$this->table  = 'cms_article';
 		$this->autoid = 'art_id';
 		$this->language = $this->session->userdata('site_language');
 	}

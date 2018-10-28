@@ -29,7 +29,7 @@ class Mem_member_model  extends  MY_Model
 		$mid = ($this->session->userdata('mid'))?$this->session->userdata('mid'):'';
 		$uid =  ($this->session->userdata('uid'))?$this->session->userdata('uid'):'';
 		$from = ($this->session->userdata('from'))?$this->session->userdata('from'):'';
-		$row = $this->db->where(array('login_mid'=>$mid,'login_uid'=>$uid,'login_from'=>$from))->get($this->db->dbprefix('tp_login'))->row_array();
+		$row = $this->db->where(array('login_mid'=>$mid,'login_uid'=>$uid,'login_from'=>$from))->get($this->db->dbprefix('plug_login'))->row_array();
 		return ($row) ? $row["login_icon"]: base_url().'default/assets/img/user.png';
 	}
 }

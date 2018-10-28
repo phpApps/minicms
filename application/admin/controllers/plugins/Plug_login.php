@@ -9,7 +9,7 @@
 * @time   2017.6
 **/
 
-class Tp_login extends PG_Controller
+class Plug_login extends SYS_Controller
 {
 	public function __construct()
 	{
@@ -41,11 +41,11 @@ class Tp_login extends PG_Controller
 		$row['param'] = config_item('param');
 		if($this->form_validation->run() == FALSE ){
 			$row['sign'] = '';
-			return $this->load->view('tp_login/fb_login',$row);
+			return $this->load->view('plugins/plug_login/fb_login',$row);
 		}
 		//更新缓存
 		$row['sign'] = $this->get_cfg($data,'fb');
-		return $this->load->view('tp_login/fb_login',$row);
+		return $this->load->view('plugins/plug_login/fb_login',$row);
 	}
 	
 	/*
@@ -71,11 +71,11 @@ class Tp_login extends PG_Controller
 		
 		if($this->form_validation->run() == FALSE ){
 			$row['sign'] = '';
-			return $this->load->view('tp_login/tw_login',$row);
+			return $this->load->view('plugins/plug_login/tw_login',$row);
 		}
 		//更新缓存
 		$row['sign'] = $this->get_cfg($data,'tw');
-		return $this->load->view('tp_login/tw_login',$row);
+		return $this->load->view('plugins/plug_login/tw_login',$row);
 	}
 	
 	
@@ -102,11 +102,11 @@ class Tp_login extends PG_Controller
 		
 		if($this->form_validation->run() == FALSE ){
 			$row['sign'] = '';
-			return $this->load->view('tp_login/qq_login',$row);
+			return $this->load->view('plugins/plug_login/qq_login',$row);
 		}
 		//更新缓存
 		$row['sign'] = $this->get_cfg($data,'qq');
-		return $this->load->view('tp_login/qq_login',$row);
+		return $this->load->view('plugins/plug_login/qq_login',$row);
 	}
 	
 	/*

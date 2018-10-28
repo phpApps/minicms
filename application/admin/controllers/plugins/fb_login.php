@@ -16,7 +16,7 @@ class Fb_login extends MY_Controller
 		
 		parent::__construct();
 		$this->load->model('mem_member_model');
-		$this->load->model('tp_login_model');
+		$this->load->model('plug_login_model');
 		$config['fetchclass'] = $this->router->fetch_class();
 		$this->load->library('graph_php_sdk_5.0.0/facebookapi',$config);
     }
@@ -42,14 +42,14 @@ class Fb_login extends MY_Controller
 		
 		$_SESSION['admin_info'] = $this->facebookapi->get_user_info();
 		$user_info = $_SESSION['admin_info'];
-		$res = $this->tp_login_model->get_row(array('login_uid'=>$user_info['id'],'login_from'=>'Facebook'));
+		$res = $this->plug_login_model->get_row(array('login_uid'=>$user_info['id'],'login_from'=>'Facebook'));
 		
 		if(empty($res)){
 			$row['login_uid']= $user_info['id'];
 		    $row['login_name']= $user_info['name'];
 			$row['login_from']= 'Facebook';
 			$row['login_icon']= $user_info['picture']['url'];
-			$this->tp_login_model->insert($row);//添加第三方信息
+			$this->plug_login_model->insert($row);//添加第三方信息
 			$this->session->set_userdata('uid',$user_info['id']);
 			$this->session->set_userdata('from',$row['login_from']);
 		}else{

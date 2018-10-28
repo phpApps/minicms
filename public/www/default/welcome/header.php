@@ -24,7 +24,7 @@
 	  <?php endif;?>
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         <li><a href="<?php echo site_url('ajax/login');?>"><i class="glyphicon glyphicon-log-in"></i> 用户登录</a></li>
-        <li><a href="<?php echo site_url("admin/plugin/tp_login/loginout?redirect_uri=".base64_encode(current_url()));?>"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+        <li><a href="<?php echo site_url("admin/plugin/plug_login/loginout?redirect_uri=".base64_encode(current_url()));?>"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
       </ul>
     </div>
   </div>

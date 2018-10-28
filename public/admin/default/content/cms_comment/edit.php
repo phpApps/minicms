@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="<?php echo base_url();?>template/default/assets/css/style.css" rel="stylesheet" />
-<script src="<?php echo base_url();?>template/plugin/jquery/jquery-3.0.0.min.js"></script>
-<script src="<?php echo base_url();?>template/default/assets/js/script.js"></script>
+<link href="<?php echo base_url();?>admin/assets/css/style.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>plugin/jquery/jquery-3.0.0.min.js"></script>
+<script src="<?php echo base_url();?>admin/assets/js/script.js"></script>
 <script>
 $(function(){
 	 var val = '<?php echo $row['cmt_status'];?>';

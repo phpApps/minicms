@@ -25,7 +25,7 @@ class Ajax extends LG_Controller
 		if($uid){
 			$result = $this->db->select('login_icon, login_name')
 								->where_in('login_uid', $uid)
-							    ->get($this->db->dbprefix('tp_login'))
+							    ->get($this->db->dbprefix('plug_login'))
 							    ->row_array();
 			$data['tp']['member_icon']	= $result['login_icon'];					
 			$data['tp']['member_name']	= $result['login_name'];						

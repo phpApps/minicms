@@ -3,18 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="<?php echo base_url();?>template/plugin/kindeditor/themes/default/default.css" rel="stylesheet" />
-<link href="<?php echo base_url();?>template/default/assets/css/style.css" rel="stylesheet" />
-<script src="<?php echo base_url();?>template/plugin/jquery/jquery-3.0.0.min.js"></script>
-<script src="<?php echo base_url();?>template/plugin/kindeditor/kindeditor-min.js"></script>
-<script src="<?php echo base_url();?>template/plugin/kindeditor/lang/zh_CN.js"></script>
-<script src="<?php echo base_url();?>template/default/assets/js/script.js"></script>
+<link href="<?php echo base_url();?>plugin/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="<?php echo base_url();?>admin/assets/css/style.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>plugin/jquery/jquery-3.0.0.min.js"></script>
+<script src="<?php echo base_url();?>plugin/kindeditor/kindeditor-min.js"></script>
+<script src="<?php echo base_url();?>plugin/kindeditor/lang/zh_CN.js"></script>
+<script src="<?php echo base_url();?>admin/assets/js/script.js"></script>
 <script type="text/javascript">
 KindEditor.ready(function(K) {
 	var uploadbutton = K.uploadbutton({
 		button : K('#uploadButton')[0],
 		fieldName : 'imgFile',
-		url : '<?php echo base_url();?>template/plugin/kindeditor/php/upload_json.php?dir=image',
+		url : '<?php echo base_url();?>plugin/kindeditor/php/upload_json.php?dir=image',
 		afterUpload : function(data) {
 			if (data.error === 0) {
 				var url = K.formatUrl(data.url, 'absolute');
@@ -30,7 +30,7 @@ KindEditor.ready(function(K) {
 	var uploadbutton2 = K.uploadbutton({
 		button : K('#uploadButton2')[0],
 		fieldName : 'imgFile',
-		url : '<?php echo base_url();?>template/plugin/kindeditor/php/upload_json.php?dir=image',
+		url : '<?php echo base_url();?>plugin/kindeditor/php/upload_json.php?dir=image',
 		afterUpload : function(data) {
 			if (data.error === 0) {
 				var url = K.formatUrl(data.url, 'absolute');
@@ -46,7 +46,7 @@ KindEditor.ready(function(K) {
 	var uploadbutton3 = K.uploadbutton({
 		button : K('#uploadButton3')[0],
 		fieldName : 'imgFile',
-		url : '<?php echo base_url();?>template/plugin/kindeditor/php/upload_json.php?dir=file',
+		url : '<?php echo base_url();?>plugin/kindeditor/php/upload_json.php?dir=file',
 		afterUpload : function(data) {
 			if (data.error === 0) {
 				var url = K.formatUrl(data.url, 'absolute');

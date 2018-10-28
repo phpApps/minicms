@@ -7,7 +7,7 @@ class Qq_login extends PG_Controller
 	public function __construct()
 	{
     	parent::__construct();
-		$this->load->model('tp_login_model');
+		$this->load->model('plug_login_model');
 		$config['fetchclass'] = $this->router->fetch_class();
 		$this->load->library('qq_php_sdk_2.1/oauth',$config);
     }
@@ -37,13 +37,13 @@ class Qq_login extends PG_Controller
 		
 		$_SESSION['admin_info'] = $this->oauth->get_user_info($code);
 		$user_info = $_SESSION['admin_info'];
-		$res = $this->tp_login_model->get_row(array('login_uid'=>$user_info['uid'],'login_from'=>'QQ'));
+		$res = $this->plug_login_model->get_row(array('login_uid'=>$user_info['uid'],'login_from'=>'QQ'));
 		if(empty($res)){
 			$row['login_uid']= $user_info['uid'];
 			$row['login_name']= $user_info['nickname'];
 			$row['login_from']= 'QQ';
 			$row['login_icon']= $user_info['figureurl_qq_1'];
-			$this->tp_login_model->insert($row);//添加第三方信息
+			$this->plug_login_model->insert($row);//添加第三方信息
 			$this->session->set_userdata('uid',$user_info['uid']);
 			$this->session->set_userdata('from',$row['login_from']);
 		}else{

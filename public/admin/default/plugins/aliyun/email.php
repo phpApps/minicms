@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title></title>
-<link href="<?php echo base_url();?>template/plugin/kindeditor/themes/default/default.css" rel="stylesheet" />
-<link href="<?php echo base_url();?>template/default/assets/css/style.css" rel="stylesheet" />
-<script src="<?php echo base_url();?>template/default/assets/js/jquery-3.0.0.min.js"></script>
-<script src="<?php echo base_url();?>template/plugin/kindeditor/kindeditor-min.js"></script>
-<script src="<?php echo base_url();?>template/plugin/kindeditor/lang/zh_CN.js"></script>
-<script src="<?php echo base_url();?>template/default/assets/js/script.js"></script>
+<link href="<?php echo base_url();?>plugin/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="<?php echo base_url();?>admin/assets/css/style.css" rel="stylesheet" />
+<script src="<?php echo base_url();?>plugin/jquery/jquery-3.0.0.min.js"></script>
+<script src="<?php echo base_url();?>plugin/kindeditor/kindeditor-min.js"></script>
+<script src="<?php echo base_url();?>plugin/kindeditor/lang/zh_CN.js"></script>
+<script src="<?php echo base_url();?>admin/assets/js/script.js"></script>
 <script>
 $(function(){
 	
@@ -18,7 +18,7 @@ $(function(){
 	
 	//发单/群发邮件
 	$("#sendSingleEmail").click(function(e){ 
-       	$.post("<?php echo site_url('admin/plugin/caliyunemail')?>",{
+       	$.post("<?php echo site_url('admin/plugins/aliyun/email/test')?>",{
 			type:$("#type").val(),
 			eTitle:$('#eTitle').val(),
 			eAddress:$('#eAddress').val(),

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>系统管理</title>
-<link href="<?php echo base_url();?>template/default/assets/css/style.css" rel="stylesheet" />
+<link href="<?php echo base_url();?>admin/assets/css/style.css" rel="stylesheet" />
 <body>
 <div class="toolBox"></div>
 <div class="noteBox"><?php if(key($_GET)=='limit') echo '你没有操作此项的权限';?></div>
