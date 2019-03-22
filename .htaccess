@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on 
+RewriteCond %{HTTP_HOST} ^(www.)?360yake.com$ 
+RewriteCond %{REQUEST_URI} !^/360yake/ 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ /360yake/$1  
+RewriteCond %{HTTP_HOST} ^(www.)?360yake.com$ 
+RewriteRule ^(/)?$ 360yake/index.php [L] 
+
+RewriteEngine on 
+RewriteCond %{HTTP_HOST} ^(test.)?360yake.com$ 
+RewriteCond %{REQUEST_URI} !^/test/ 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^(.*)$ /test/$1  
+RewriteCond %{HTTP_HOST} ^(test.)?360yake.com$ 
+RewriteRule ^(/)?$ test/index.php [L]  
+</IfModule>
